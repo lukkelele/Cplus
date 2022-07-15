@@ -1,6 +1,8 @@
 # Ignore files
 
-*
+.vs
+.vscode
+build
 !**/*.cpp
 !**/*.h
 !**/*.c
