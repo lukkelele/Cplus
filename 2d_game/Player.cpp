@@ -1,23 +1,30 @@
 #include "Player.h"
-#include <iostream>
 
 
-Player::Player(int X, int Y) //: posX(0), posY(0)
-{
-  this->posX = X;
-  this->posY = Y;
+Player::Player() {
+    this->hp = 100;
+    setPos(0, 0);
+}
+
+Player::Player(int hp) {
+    this->hp = hp;
+    setPos(0, 0);
+}
+
+
+int Player::getHP() {
+    return this->hp;
+}
+
+void Player::setPos(int x, int y) {
+    this->posX = x;
+    this->posY = y;
 }
 
 int Player::getPosX() {
-  std::cout << "Position: " << this->posX << " | " << this->posY << std::endl; 
-  return this->posX;
+    return this->posX;
 }
 
 int Player::getPosY() {
-  return this->posX;
-
-}
-
-void Player::showPosition() {
-  std::cout << "Position: " << this->posX << " | " << this->posY << std::endl; 
+    return this->posY;
 }

@@ -1,20 +1,23 @@
-#ifndef _WORLD_H
-#define _WORLD_H
-#define STANDARD_X_SIZE 10
-#define STANDARD_Y_SIZE 10
+#include "Player.h"
+
+#define X_SIZE 4
+#define Y_SIZE 5
+#define DEFAULT_SPAWN_X 0
+#define DEFAULT_SPAWN_Y 0
 
 class World {
-  
-  public:
-    World();
-    World(int X, int Y);
-    static int grid[10][10];
 
-  public:
-    void displayWorld();
-    int Xsize;
-    int Ysize;
+    public:
+        World();
+        World(int spawn[2]);
+
+        void movePlayer(Player *player, int x, int y);
+        void displayWorld();
+
+
+    private:
+        int grid[X_SIZE][Y_SIZE] = {0};  // initializes zeroes over grid
+        int spawnPoint[2];
+
 
 };
-
-#endif
